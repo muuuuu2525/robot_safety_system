@@ -22,7 +22,7 @@ class SafetyBrake(Node):
             10)
         self.publisher_ = self.create_publisher(String, 'safety_status', 10)
         self.threshold = 1.0
-        self.get_logger().info('Safety Brake System is ready.')
+        self.get_logger().info('[Safe]y Brake System is ready.')
 
     def listener_callback(self, msg):
         """Receive distance data and determine safety."""
@@ -31,7 +31,7 @@ class SafetyBrake(Node):
             self.get_logger().warn(f'DANGER! Distance: {msg.data}m. STOP!')
             status_msg.data = 'STOP'
         else:
-            self.get_logger().info(f'Safe. Distance: {msg.data}m. GO.')
+            self.get_logger().info(f'[Safe] Distance: {msg.data}m. GO.')
             status_msg.data = 'GO'
         self.publisher_.publish(status_msg)
 
