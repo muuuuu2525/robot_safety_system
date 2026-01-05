@@ -1,6 +1,6 @@
 # robot_safety_system
 
-![test](https://github.com/muuuuu2525/robot_safety_system2025/actions/workflows/test.yml/badge.svg)
+[![test](https://github.com/muuuuu2525/robot_safety_system2025/actions/workflows/test.yml/badge.svg)](https://github.com/muuuuu2525/robot_safety_system2025/actions)
 
 * 距離センサーの値をシミュレートし、障害物が接近した場合に自動で緊急停止命令を出すROS 2パッケージです。
 
