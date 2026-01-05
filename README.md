@@ -86,7 +86,7 @@ data: "STOP"
 ## ライセンス
 
 * このパッケージは、Apache-2.0 Licenseの下で公開されています。
-* © 2025 Taro Chiba 
+* © 2025 Manamu Asano 
 
 
 

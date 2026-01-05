@@ -1,0 +1,18 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    container: ros:humble-ros-base-jammy
+    steps:
+      - uses: actions/checkout@v3
+      - name: build and test
+        run: |
+          . /opt/ros/humble/setup.sh
+          colcon build --symlink-install
+          colcon test
+          colcon test-result --all --verbose
