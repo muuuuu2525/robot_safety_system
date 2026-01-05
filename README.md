@@ -82,3 +82,21 @@ ros2 launch robot_safety_system safety_system_launch.py
 
 
 
+
+## ノードとトピックの構成
+
+このシステムは以下の2つのノードと、それらを繋ぐトピックで構成されています。
+
+### ノード一覧
+
+| ノード名 | 役割 | ソースファイル |
+| :--- | :--- | :--- |
+| `sensor_simulator` | 距離センサーの値を模倣し、定期的にデータを送信します。 | `sensor_simulator.py` |
+| `safety_brake` | 距離データを受信し、危険な距離（1.0m未満）なら停止命令を出します。 | `safety_brake.py` |
+
+### トピック一覧
+
+| トピック名 | データ型 | 通信方向 | 説明 |
+| :--- | :--- | :--- | :--- |
+| `/distance` | `std_msgs/Float32` | `sensor` → `brake` | センサーが計測した障害物までの距離（メートル） |
+| `/safety_status` | `std_msgs/String` | `brake` → 外部 | 安全状態を示すステータス（"GO" または "STOP"） |
