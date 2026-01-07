@@ -37,7 +37,7 @@
 ## 実行・動作確認
 
 ## システムの起動
-   ワークスペースでビルド後、以下のコマンドでシステムを起動します。
+   動作確認を行うため、以下のコマンドでビルドと起動を実行します。
    ```bash
    ros2 launch robot_safety_system safety_system_launch.py
    ```
